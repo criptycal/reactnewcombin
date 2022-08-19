@@ -37,7 +37,7 @@ export const payablesRouter = createRouter()
                 required_error: "Description is required",
                 invalid_type_error: "Description must be String type" 
             }),
-            expirationDate: z.string({
+            expirationDate: z.date({
                 required_error: "ExpirationDate is required",
                 invalid_type_error: "ExpirationDate must be Date type"
             }),
@@ -57,8 +57,6 @@ export const payablesRouter = createRouter()
         }),
 
     async resolve({ ctx, input }) {
-        const findPayable = await ctx.prisma.payable.findMany({where: {barcode: input.barcode,}});
-        if (!findPayable) {
             const addPayable = await ctx.prisma.payable.create({
                 data: {
                     typeService: input.typeService,
@@ -70,12 +68,7 @@ export const payablesRouter = createRouter()
                 },
             });
         return addPayable;
-        } else {
-            throw new TRPCError({
-                code: "BAD_REQUEST",
-                message:  `Payable with barcode ${input.barcode} already found`,
-            });
-        }
+        
     },
 
     })

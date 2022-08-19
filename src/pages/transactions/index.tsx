@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../../components/navbar";
-import Footer from "../../components/footer";
 import { NextPage } from "next";
 import Head from "next/head";
 
@@ -17,7 +16,7 @@ const Transactions: NextPage = () => {
                 <h1>Transactions</h1>
             </main>
 
-            <Footer />
+            
         </>
     )
 }

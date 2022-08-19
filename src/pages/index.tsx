@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { trpc } from "../utils/trpc";
 import Header from "../components/navbar";
-import Footer from "../components/footer";
 
 type TechnologyCardProps = {
   name: string;

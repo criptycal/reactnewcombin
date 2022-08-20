@@ -111,7 +111,7 @@ export default function PayableForm() {
                                 {...register("service")}
                             >
                                 <option value="">Seleccione una opción</option>
-                                <option value="luz">luz</option>
+                                <option value="Luz">Luz</option>
                                 <option value="Internet">Internet</option>
                                 <option value="TV">TV</option>
                             </select>

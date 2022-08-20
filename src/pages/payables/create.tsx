@@ -14,7 +14,7 @@ const CreatePayable: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header  activePage="Payables" />
-            <Filters typeFilter="Payables" typeBtn="Payable" />
+            <Filters typeBtn="Payable" />
             <PayableForm />
 
         </>

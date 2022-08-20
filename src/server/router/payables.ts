@@ -109,5 +109,22 @@ export const payablesRouter = createRouter()
         });
         return deletePayable;
     }
-    });
+    })
+    // get payable by typeService
+    .query("getByTypeService", {
+        input: z.object({
+            typeService: z.string(),
+        }),
+    async resolve({ ctx, input }) {
+        const payable = await ctx.prisma.payable.findMany({where: {typeService: input.typeService,},
+        });
+        if (!payable) {
+            throw new TRPCError({
+                code: "NOT_FOUND",
+                message:  `Payable with typeService ${input.typeService} not found`,
+            });
+        }
+        return payable;
+    }
+    })
     

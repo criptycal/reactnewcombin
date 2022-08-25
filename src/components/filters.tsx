@@ -29,12 +29,12 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
-type FilterProps = {
-    
+type FilterProps = { 
     typeBtn: string;
 }
 
 export default function Filters({ typeBtn }: FilterProps) {
+    
     const [selected, setSelected] = useState(filters[0]);
 
     
@@ -86,7 +86,7 @@ export default function Filters({ typeBtn }: FilterProps) {
                                                     <Listbox.Option
                                                         key={filterIdx}
                                                         className={({ active }) =>
-                                                            `relative cursor-default select-none py-2 pl-10 pr-4 ${active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
+                                                            `relative cursor-default select-none py-2 pl-10 pr-4 ${active ? 'bg-purple-100 text-purple-900' : 'text-gray-900'
                                                             }`
                                                         }
                                                         value={filter}
@@ -100,7 +100,7 @@ export default function Filters({ typeBtn }: FilterProps) {
                                                                     {filter.filtertype}
                                                                 </span>
                                                                 {selected ? (
-                                                                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                                                                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-purple-600">
                                                                         <CheckIcon className="h-5 w-5" aria-hidden="true" />
                                                                     </span>
                                                                 ) : null}

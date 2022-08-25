@@ -114,19 +114,7 @@ export default function PayablesList({ filter }: ListProps) {
                                                     </td>
                                                     <td>
                                                         <div className="flex flex-row mx-4 justify-center">
-                                                            <div>
-                                                                <button className="
-                                                                bg-blue-500 
-                                                                hover:bg-blue-700 
-                                                                text-white font-bold 
-                                                                py-2 px-4 
-                                                                rounded-md">
-                                                                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
-                                                                    </span>
-                                                                    <PencilIcon className="h-5 w-5" aria-hidden="true" />
-
-                                                                </button>
-                                                            </div>
+                                                            
                                                             <div className="ml-4">
                                                                 <form onSubmit={onDelete}>
                                                                     <input value={payable.id} className="hidden" {...register("id", {})}></input>
@@ -138,10 +126,7 @@ export default function PayablesList({ filter }: ListProps) {
                                                                         rounded-md"
                                                                         type="submit"
                                                                     >
-
-
                                                                         <TrashIcon className="h-5 w-5" aria-hidden="true" />
-
                                                                     </button>
                                                                 </form>
                                                             </div>
